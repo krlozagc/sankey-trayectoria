@@ -59,16 +59,23 @@ body{
   color:var(--ink);
   font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   padding-inline:20px;
-  padding-block:36px 48px;
+  padding-block:28px 40px;
 }
 .wrap{
   max-width:1080px;
   margin:0 auto;
   display:flex;
   flex-direction:column;
-  gap:28px;
+  gap:16px;
 }
 
+.top-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
 .eyebrow{
   font-family:"IBM Plex Mono", ui-monospace, monospace;
   font-size:11px;
@@ -76,6 +83,31 @@ body{
   letter-spacing:0.12em;
   text-transform:uppercase;
   color:var(--muted);
+}
+.lang-switch{
+  display:flex;
+  gap:4px;
+  flex:none;
+}
+.lang-switch button{
+  all:unset;
+  padding:4px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--surface);
+  font-family:"IBM Plex Mono", ui-monospace, monospace;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.04em;
+  color:var(--muted);
+  cursor:pointer;
+  transition:background .15s ease, color .15s ease, border-color .15s ease;
+}
+.lang-switch button:hover{border-color:var(--line-strong);}
+.lang-switch button[aria-pressed="true"]{
+  background:var(--ink);
+  border-color:var(--ink);
+  color:var(--bg);
 }
 h1{
   font-family:"Source Serif 4", Georgia, serif;
@@ -104,7 +136,6 @@ h1{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
-  margin-top:16px;
 }
 .legend button{
   all:unset;
